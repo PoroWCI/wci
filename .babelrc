@@ -1,0 +1,20 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "@babel/preset-react",
+    "airbnb"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "@components": "./src/components",
+        "@navigation": "./src/navigation",
+        "@screens": "./src/screens",
+        "@images": "./src/images"
+      }
+    }],
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
+  ]
+}
