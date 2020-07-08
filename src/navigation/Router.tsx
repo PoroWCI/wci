@@ -3,6 +3,7 @@ import { Store } from 'redux'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
+import HomeEntity from '@screens/Home'
 import NoMatch from '@screens/NoMatch'
 
 interface Routes {
@@ -14,7 +15,7 @@ interface Routes {
 
 const routes = [
   {
-    component: null,
+    component: <HomeEntity />,
     path: '/',
     exact: true,
     protectedPath: false,
