@@ -15,7 +15,7 @@ interface Routes {
 
 const routes = [
   {
-    component: <HomeEntity />,
+    component: HomeEntity,
     path: '/',
     exact: true,
     protectedPath: false,
