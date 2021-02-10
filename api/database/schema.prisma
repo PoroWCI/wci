@@ -1,6 +1,7 @@
-datasource postgresql {
-    url = env("")
+datasource db {
+    url = "postgresql://postgres:postgres@localhost:4466/mydb?schema=public"
     provider = "postgresql"
+    enabled  = true
 }
 
 generator client {
