@@ -1,0 +1,27 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@components": "./src/components",
+          "@navigation": "./src/navigation",
+          "@screens": "./src/screens",
+          "@images": "./src/images",
+          "@themes": "./src/themes",
+          "@store": "./src/store",
+          "@helpers": "./src/helpers",
+          "@modules": "./src/modules",
+          "@hooks": "./src/hooks",
+          "@translations": "./src/translations"
+        }
+      }
+    ],
+    "@babel/proposal-object-rest-spread"
+  ]
+}
