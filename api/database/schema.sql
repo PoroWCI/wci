@@ -1,13 +1,3 @@
-datasource db {
-    url = "postgresql://postgres:postgres@localhost:4466/mydb?schema=public"
-    provider = "postgresql"
-    enabled  = true
-}
-
-generator client {
-    provider = "prisma-client-js"
-}
-
 model User {
     id              Int             @id @default(autoincrement())
     role            Role[]          @defalt(CLIENT)
