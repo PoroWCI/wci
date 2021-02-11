@@ -12,14 +12,7 @@ import {
 import HomeEntity from '@screens/Home'
 import ThemeChanger from '@hooks/useThemeChanger'
 
-interface Routes {
-	component: React.ReactNode
-	path: string
-	exact: boolean
-	protectedPath: boolean
-}
-
-const routes: [Routes] = [
+const routes = [
 	{
 		component: HomeEntity,
 		path: '/',
@@ -28,7 +21,7 @@ const routes: [Routes] = [
 	},
 ]
 
-const Router: React.FunctionComponent<{ store: Store }> = ({ store }) => {
+const Router = ({ store }) => {
 	const { user } = store.getState()
 
 	return (

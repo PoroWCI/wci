@@ -1,0 +1,18 @@
+@import '~/src/themes/mixins';
+@import '~/src/themes/keyframes';
+
+.loading {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-primary);
+    @include flex(center, center);
+
+    img {
+        animation: blink 1.25s linear 3 .25s;
+    }
+}
+
+.hide {
+    position: absolute;
+    animation: slideOut 1s forwards;
+}

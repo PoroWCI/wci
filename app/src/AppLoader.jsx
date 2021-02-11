@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactGA from 'react-ga'
 import { CookiesProvider } from 'react-cookie'
 import { I18nextProvider } from 'react-i18next'
@@ -18,6 +18,8 @@ import configureStore from './store'
 
 import common_en from '@translations/en/common.json'
 import common_fr from '@translations/fr/common.json'
+
+import Loading from '@screens/Loading'
 
 /**
  * Translate
@@ -96,6 +98,18 @@ const client = new ApolloClient({
 ReactGA.initialize('UA-000000-01')
 
 const AppLoader = () => {
+	const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+		setTimeout(() => {
+			setLoading(false)
+		}, 5000)
+	})
+
+	if (loading) {
+		return <Loading status={loading} />
+	}
+
 	return (
 		<>
 			<ApolloProvider client={client}>

@@ -5,17 +5,16 @@
     "plugin:import/warnings",
     "plugin:react/recommended"
   ],
-  "plugins": ["module-resolver", "react", "prettier"],
+  "plugins": ["module-resolver", "react", "prettier", "import"],
   "settings": {
-    "import/resolver": {
-      "babel-module": {},
-      "node": {
-        "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
+    "import/resolver": { "babel-module": {} }
   },
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": { "jsx": true }
+  },
   "rules": {
     "module-resolver/use-alias": 2,
     "no-alert": 2,

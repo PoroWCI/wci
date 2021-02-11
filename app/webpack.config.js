@@ -26,9 +26,9 @@ const postCSSLoader = {
 }
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/index.js',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.jsx', '.js', '.scss', '.css']
   },
   output: {
     filename: '[name].[hash].js',
@@ -37,7 +37,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|js)x?$/,
+        test: /\.(js)x?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -53,7 +53,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', CSSModuleLoader, postCSSLoader, 'sass-loader'],
+        use: [
+          'style-loader', 
+          CSSModuleLoader,
+          postCSSLoader, 
+          'sass-loader'
+        ],
       },
       {
         test: /\.css$/,
