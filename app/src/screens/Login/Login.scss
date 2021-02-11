@@ -8,29 +8,23 @@
     width: 100vw;
 
     .leftSide {
-        font-family: Raleway;
         @include flex(center, flex-start);
         flex-direction: column;
         position: absolute;
         left: 0;
-        padding-left: 60px;
+        padding-left: 90px;
         width: 65%;
         height: 100%;
         background-color: var(--color-primary);
-        color: var(--color-primary-text);
         animation: slideInTop nth($delays, 2) forwards;
 
         h1 {
-            font-size: 10em;
-            font-weight: normal;
-            line-height: 185px;
+            @include font(10em, 185px, 400);
             margin: 0;
         }
 
         h2 {
-            font-size: 5.7em;
-            font-weight: normal;
-            line-height: 110px;
+            @include font(5.7em, 185px, 400);
             margin: 0;
         }
     }
@@ -45,5 +39,11 @@
         right: 0;
         width: 35%;
         height: 100%;
+
+        .translate {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+        }
     }
 }

@@ -1,0 +1,10 @@
+@import '~/src/themes/mixins';
+
+button {
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: none;
+    @include font(18px, 21px, 400, var(--color-secondary-text));
+}

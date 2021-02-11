@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import { Store } from 'redux'
 import { Provider } from 'react-redux'
+import { withTranslation } from 'react-i18next';
 import {
 	BrowserRouter,
 	Switch,
 	Route,
 	Redirect,
 	useLocation,
+	withRouter
 } from 'react-router-dom'
 
 import HomeEntity from '@screens/Home'

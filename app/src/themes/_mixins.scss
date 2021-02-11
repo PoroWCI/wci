@@ -21,3 +21,11 @@
       @content;
     } 
 }
+
+@mixin font($size, $lineHeight, $weigth, $color: var(--color-primary-text), $family: Raleway) {
+    font-family: $family;
+    font-size: #{$size};
+    line-height: #{$lineHeight};
+    font-weight: $weigth;
+    color: $color;
+}
