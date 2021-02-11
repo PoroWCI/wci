@@ -1,3 +1,4 @@
+@import '~/src/themes/variables';
 @import '~/src/themes/mixins';
 @import '~/src/themes/keyframes';
 
@@ -8,11 +9,11 @@
     @include flex(center, center);
 
     img {
-        animation: blink 1.25s linear 3 .25s;
+        animation: blink nth($delays, 1) linear 3 nth($delays, 5);
     }
 }
 
 .hide {
     position: absolute;
-    animation: slideOut 1s forwards;
+    animation: slideOut nth($delays, 2) forwards;
 }

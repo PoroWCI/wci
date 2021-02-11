@@ -10,15 +10,17 @@ import {
 } from 'react-router-dom'
 
 import HomeEntity from '@screens/Home'
+import LoginEntity from '@screens/Login'
+
 import ThemeChanger from '@hooks/useThemeChanger'
 
 const routes = [
 	{
-		component: HomeEntity,
+		component: LoginEntity,
 		path: '/',
 		exact: true,
-		protectedPath: false,
-	},
+		protectedPath: false
+	}
 ]
 
 const Router = ({ store }) => {
