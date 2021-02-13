@@ -1,0 +1,65 @@
+@import '~/src/themes/variables';
+@import '~/src/themes/mixins';
+@import '~/src/themes/keyframes';
+
+.hide {
+    animation: fadeOutRight nth($delays, 3) linear!important;
+}
+
+.cookies {
+    position: absolute;
+    max-width: 450px;
+    bottom: 24px;
+    right: 12px;
+    padding: 14px;
+    background: rgba(0, 0, 0, 0.8);
+    @include font(18px, 21px, 400, var(--color-primary-text), Courier New);
+    animation: slideInRight nth($delays, 2) linear;
+
+    p { 
+        margin-top: 0;
+        text-align: justify;
+        user-select: text;
+        word-break: break-all;
+
+        &::selection {
+            background: var(--color-primary);
+        }
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        button {
+            border: 0;
+            outline: 0;
+            background: 0;
+            padding: 5px;
+            cursor: pointer;
+            @include font(18px, 21px, 400, var(--color-primary-text), Courier New);
+            transition: .2s;
+
+            &:hover {
+                background: var(--color-primary);
+            }
+        }
+    }
+}
+
+@include mobile-only {
+    .cookies {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+
+        .inputs {
+            display: grid;
+
+            button {
+                padding: 8px;
+            }
+        }
+    }
+}

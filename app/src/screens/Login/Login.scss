@@ -1,6 +1,7 @@
 @import '~/src/themes/variables';
 @import '~/src/themes/mixins';
 @import '~/src/themes/keyframes';
+@import '~/src/themes/functions';
 
 .container {
     position: relative;
@@ -12,8 +13,8 @@
         flex-direction: column;
         position: absolute;
         left: 0;
-        padding-left: 90px;
-        width: 65%;
+        padding-left: 75px;
+        width: 63%;
         height: 100%;
         background-color: var(--color-primary);
         animation: slideInTop nth($delays, 2) forwards;
@@ -27,9 +28,16 @@
             @include font(5.7em, 185px, 400);
             margin: 0;
         }
+
+        .seeMore {
+            display: none;
+            position: absolute;
+            bottom: 35px;
+            animation: bounce nth($delays, 4) ease infinite alternate nth($delays, 2);
+        }
     }
 
-    .rightSide {
+    .rightSide{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -37,13 +45,52 @@
         background-color: var(--color-secondary);
         position: absolute;
         right: 0;
-        width: 35%;
+        width: 37%;
         height: 100%;
 
         .translate {
             position: absolute;
             top: 18px;
             right: 22px;
+        }
+    }
+}
+
+@include mobile-only {
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .rightSide {
+            position: initial;
+        }
+    
+        .rightSide, .leftSide { 
+            min-height: -webkit-fill-available;
+            width: 100vw;
+            padding: 0;
+        }
+
+        .leftSide {
+            position: relative;
+            justify-content: center;
+            align-items: center;
+
+            h1, h2 {
+                line-height: initial;
+            }
+
+            h1 {
+                font-size: 4em;
+            }
+
+            h2 {
+                font-size: 2.5em;
+            }
+
+            .seeMore {
+                display: block;
+            }
         }
     }
 }

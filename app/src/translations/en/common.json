@@ -2,5 +2,11 @@
     "login": {
         "title-1": "An idea ?",
         "title-2": "We code it."
+    },
+    "cookies": {
+        "privacy": ">_ We use necessary cookies to make our website work. We also set optional cookies to help us to improve it, display personalized content and provide you with an unforgettable experience. You could also agree to use use functional cookies to allow you to share some content from our website on your social networks or for video content playing. For more detailed information about the cookies we use, please see our Cookies policy.",
+        "custom": "[C]ustom",
+        "accept": "[A]gree",
+        "refuse": "[R]efuse"
     }
 }

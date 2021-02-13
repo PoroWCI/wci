@@ -1,31 +1,47 @@
+@import '~/src/themes/responsive';
+
 @mixin flex($justify, $align) {
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
 }
 
-@mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-      @content; 
-    }
-
-    @-moz-keyframes #{$name} {
-      @content;
-    }
-
-    @-ms-keyframes #{$name} {
-      @content;
-    }
-
-    @keyframes #{$name} {
-      @content;
-    } 
+@mixin transform($transform) {
+  -ms-transform: $transform;
+  -webkit-transform: $transform;
+  -o-transform: $transform;
+  -moz-transform: $transform;
+  transform: $transform;
 }
 
 @mixin font($size, $lineHeight, $weigth, $color: var(--color-primary-text), $family: Raleway) {
-    font-family: $family;
-    font-size: #{$size};
-    line-height: #{$lineHeight};
-    font-weight: $weigth;
-    color: $color;
+  font-family: $family;
+  font-size: #{$size};
+  line-height: #{$lineHeight};
+  font-weight: $weigth;
+  color: $color;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin mobile-only {
+  @media screen and (max-width: map-get($breakpoints, mobile)) {
+    @content;
+  }
 }

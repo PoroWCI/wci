@@ -1,10 +1,16 @@
 @import '~/src/themes/mixins';
 
-button {
+.switcher {
     outline: 0;
     border: 0;
     cursor: pointer;
     text-transform: uppercase;
     background: none;
     @include font(18px, 21px, 400, var(--color-secondary-text));
+}
+
+@include mobile-only {
+    .switcher {
+        color: var(--color-primary-text);
+    }
 }

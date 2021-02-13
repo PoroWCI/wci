@@ -2,5 +2,11 @@
     "login": {
         "title-1": "Une idée ?",
         "title-2": "Développons-la."
+    },
+    "cookies": {
+        "privacy": ">_ Nous utilisons les cookies nécessaires pour faire fonctionner notre site Web. Nous installons également des cookies facultatifs pour nous aider à l'améliorer, afficher un contenu personnalisé et vous offrir une expérience inoubliable. Vous pouvez également accepter d'utiliser des cookies fonctionnels pour vous permettre de partager certains contenus de notre site Web sur vos réseaux sociaux ou pour la lecture de contenu vidéo. Pour plus d'informations sur les cookies que nous utilisons, veuillez consulter notre politique de cookies.",
+        "custom": "[P]ersonnaliser",
+        "accept": "[A]ccepter",
+        "refuse": "[R]efuser"
     }
 }

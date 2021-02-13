@@ -2,20 +2,35 @@
 @import '~/src/themes/mixins';
 
 @include keyframes(blink) {
-    50% { opacity: 0; }
+    50% { opacity: 0 }
 }
 
 @include keyframes(slideOut) {
-    0% { transform: translateX(nth($animationstops, 1)); }
-    100% { transform: translateX(nth($animationstops, 9)); }
+    0% { @include transform(translateX(nth($animationstops, 1))) }
+    100% { @include transform(translateX(nth($animationstops, 9))) }
 }
 
 @include keyframes(slideInTop) {
-    0% { transform: translateY(nth($animationstops, 9) * -1); }
-    100% { transform: translateX(nth($animationstops, 1)); }
+    0% { @include transform(translateY(nth($animationstops, 9) * -1)) }
+    100% { @include transform(translateX(nth($animationstops, 1))) }
 }
 
 @include keyframes(slideInLeft) {
-    0% { transform: translateX(nth($animationstops, 9) * -1); }
-    100% { transform: translateX(nth($animationstops, 1)); }
+    0% { @include transform((nth($animationstops, 9) * -1)) }
+    100% { @include transform(translateX(nth($animationstops, 1))) }
+}
+
+@include keyframes(slideInRight) {
+    0% { @include transform(translateX(nth($animationstops, 9))) }
+    100% { @include transform(translateX(nth($animationstops, 1))) }
+}
+
+@include keyframes(fadeOutRight) {
+    0% { @include transform(translateX(nth($animationstops, 1))) }
+    100% { @include transform(translateX(nth($animationstops, 9) * 2)) }
+}
+
+@include keyframes(bounce) {
+    0% { @include transform(translateY(0)) }
+    100% { @include transform(translateY(-20px)) }
 }

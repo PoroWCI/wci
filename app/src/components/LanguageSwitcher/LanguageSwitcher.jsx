@@ -20,6 +20,7 @@ const LanguageSwitcher = (props) => {
     return <React.Fragment>
         <button
             type="button"
+            className={styles.switcher}
             onClick={event => handleClickSelectLanguage(event, i18next.language === 'fr' ? 'en' : 'fr')}
         >
             {i18next.language}

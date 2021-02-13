@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ReactGA from 'react-ga'
-import { CookiesProvider } from 'react-cookie'
+import { CookiesProvider, useCookies } from 'react-cookie'
 
 import { initReactI18next } from 'react-i18next'
 import Backend from 'i18next-http-backend'
@@ -23,6 +23,7 @@ import common_en from '@translations/en/common.json'
 import common_fr from '@translations/fr/common.json'
 
 import Loading from '@screens/Loading'
+import Cookies from '@components/Cookies'
 
 /**
  * Translate
@@ -108,12 +109,14 @@ ReactGA.initialize('UA-000000-01')
 
 const AppLoader = () => {
 	const [loading, setLoading] = useState(true)
+	const [cookiesStatus, setCookiesStatus] = useState(false)
+	const [cookies, setCookie] = useCookies(['name'])
 
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false)
 		}, 5000)
-	})
+	}, [])
 
 	if (loading) {
 		return <Loading status={loading} />
@@ -124,6 +127,7 @@ const AppLoader = () => {
 			<ApolloProvider client={client}>
 				<CookiesProvider>
 					<Router store={store} />
+					{!cookies.privacy && !cookiesStatus && <Cookies setCookie={setCookie} sendStatus={setCookiesStatus} />}
 				</CookiesProvider>
 			</ApolloProvider>
 		</>
